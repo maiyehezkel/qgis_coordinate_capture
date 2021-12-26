@@ -71,6 +71,12 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.trackMouseButton.setCheckable(True)
         self.trackMouseButton.setToolTip(self.tr("Click to enable mouse tracking. Click the canvas to stop"))
         self.trackMouseButton.setChecked(False)
+        
+        self.crossMouseButton = QToolButton(self.dockWidgetContents)
+        self.crossMouseButton.setIcon(QIcon(":/plugins/coordinate_capture/tracking.svg"))
+        self.crossMouseButton.setCheckable(True)
+        self.crossMouseButton.setToolTip(self.tr("Click to enable mouse tracking. Click the canvas to stop"))
+        self.crossMouseButton.setChecked(False)
 
         # Create the action for tool
         self.captureButton = QPushButton(self.dockWidgetContents)
