@@ -37,7 +37,13 @@ class CoordinateCaptureMapTool(QgsMapToolEmitPoint):
         self.rubberBand = QgsRubberBand(self.mapCanvas, QgsWkbTypes.PolygonGeometry)
         self.rubberBand.setColor(Qt.red)
         self.rubberBand.setWidth(3)
-        self.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
+        if self.dockwidget.crossMouseButton.isChecked():
+            self.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
+          else
+            self.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CapturePoint))
+
+          
+          
 
     def canvasMoveEvent(self, e):
         originalPoint = QgsPointXY(self.mapCanvas.getCoordinateTransform().toMapCoordinates(e.x(), e.y()))
