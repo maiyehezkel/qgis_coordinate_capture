@@ -12,8 +12,8 @@ email=uclaros@gmail.com
 
 about=This is a Python port of the deprecated Coordinate Capture core plugin
 
-tracker=https://github.com/uclaros/qgis_coordinate_capture/issues
-repository=https://github.com/uclaros/qgis_coordinate_capture
+tracker=https://github.com/maiyehezkel/qgis_coordinate_capture/issues
+repository=https://github.com/maiyehezkel/qgis_coordinate_capture
 # End of mandatory metadata
 
 # Recommended items:
@@ -25,7 +25,7 @@ hasProcessingProvider=no
 # Tags are comma separated with spaces allowed
 tags=python
 
-homepage=https://github.com/uclaros/qgis_coordinate_capture
+homepage=https://github.com/maiyehezkel/qgis_coordinate_capture
 category=Vector
 icon=icons/coordinate_capture.png
 # experimental flag
