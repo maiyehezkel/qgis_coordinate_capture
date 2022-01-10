@@ -59,32 +59,35 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.copyUserCrsCoordinatesAction = self.userCrsEdit.addAction(QIcon(":/plugins/coordinate_capture/mActionEditCopy.svg"),
                                                                        QLineEdit.TrailingPosition)
         self.copyUserCrsCoordinatesAction.triggered.connect(self.copyUserCrsCoordinates)
-
+        self.userCrsEdit.isClearButtonEnabled(True) 
+        
         self.canvasCrsEdit = QLineEdit(self.dockWidgetContents)
         self.canvasCrsEdit.setReadOnly(True)
         self.canvasCrsEdit.setToolTip(self.tr("Coordinate in map canvas coordinate reference system (lat,lon or east,north)"))
         self.copyCanvasCrsCoordinatesAction = self.canvasCrsEdit.addAction(QIcon(":/plugins/coordinate_capture/mActionEditCopy.svg"),
                                                                            QLineEdit.TrailingPosition)
         self.copyCanvasCrsCoordinatesAction.triggered.connect(self.copyCanvasCrsCoordinates)
-
+        self.canvasCrsEdit.isClearButtonEnabled(True) 
+        
         self.userCrsEdit1 = QLineEdit(self.dockWidgetContents)
         self.userCrsEdit1.setReadOnly(True)
         self.userCrsEdit1.setToolTip(self.tr("Coordinate in your selected CRS (lat,lon or east,north)"))
-
+        self.userCrsEdit1.isClearButtonEnabled(True) 
 
         self.canvasCrsEdit1 = QLineEdit(self.dockWidgetContents)
         self.canvasCrsEdit1.setReadOnly(True)
         self.canvasCrsEdit1.setToolTip(self.tr("Coordinate in map canvas coordinate reference system (lat,lon or east,north)"))
-
+        self.canvasCrsEdit1.isClearButtonEnabled(True) 
         
         self.userCrsEdit2 = QLineEdit(self.dockWidgetContents)
         self.userCrsEdit2.setReadOnly(True)
         self.userCrsEdit2.setToolTip(self.tr("Coordinate in your selected CRS (lat,lon or east,north)"))
-
+        self.userCrsEdit2.isClearButtonEnabled(True) 
 
         self.canvasCrsEdit2 = QLineEdit(self.dockWidgetContents)
         self.canvasCrsEdit2.setReadOnly(True)
         self.canvasCrsEdit2.setToolTip(self.tr("Coordinate in map canvas coordinate reference system (lat,lon or east,north)"))
+        self.canvasCrsEdit2.isClearButtonEnabled(True) 
 
         
         self.trackMouseButton = QToolButton(self.dockWidgetContents)
@@ -99,10 +102,6 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.crossMouseButton.setToolTip(self.tr("explantion"))
         self.crossMouseButton.setChecked(False)
 
-        self.restButton = QPushButton(self.dockWidgetContents)
-        self.resrtButton.setText(self.tr("Reset"))
-        self.resetButton.setToolTip(self.tr("Click to reset points"))
-        self.resetButton.setIcon(QIcon(":/plugins/coordinate_capture/coordinate_capture.png"))
         
         # Create the action for tool
         self.captureButton = QPushButton(self.dockWidgetContents)
