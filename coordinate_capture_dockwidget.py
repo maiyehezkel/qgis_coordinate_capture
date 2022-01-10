@@ -99,6 +99,11 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.crossMouseButton.setToolTip(self.tr("explantion"))
         self.crossMouseButton.setChecked(False)
 
+        self.restButton = QPushButton(self.dockWidgetContents)
+        self.resrtButton.setText(self.tr("Reset"))
+        self.resetButton.setToolTip(self.tr("Click to reset points"))
+        self.resetButton.setIcon(QIcon(":/plugins/coordinate_capture/coordinate_capture.png"))
+        
         # Create the action for tool
         self.captureButton = QPushButton(self.dockWidgetContents)
         self.captureButton.setText(self.tr("Start Capture"))
@@ -117,8 +122,9 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.dockWidgetContents.layout().addWidget(self.canvasCrsEdit1, 3, 1)
         self.dockWidgetContents.layout().addWidget(self.userCrsEdit2, 4, 1)
         self.dockWidgetContents.layout().addWidget(self.canvasCrsEdit2, 5, 1)
-        self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 7, 0)
         self.dockWidgetContents.layout().addWidget(self.crossMouseButton, 6, 0)
+        self.dockWidgetContents.layout().addWidget(self.captureButton, 6, 1)
+        self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 7, 0)
         self.dockWidgetContents.layout().addWidget(self.captureButton, 7, 1)
         
 
