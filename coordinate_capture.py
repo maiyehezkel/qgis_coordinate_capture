@@ -285,3 +285,5 @@ class CoordinateCapture:
     def changeCross(self):
        if self.dockwidget.crossMouseButton.isChecked():
          self.mapTool.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CapturePoint))
+       else:
+          self.mapTool.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
