@@ -39,7 +39,7 @@ class CoordinateCaptureMapTool(QgsMapToolEmitPoint):
         self.rubberBand.setWidth(3)
         if self.dockwidget.crossMouseButton.isChecked():
             CoordinateCaptureDockWidget.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
-        else
+        else:
             CoordinateCaptureDockWidget.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CapturePoint))
 
           
