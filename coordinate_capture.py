@@ -273,10 +273,9 @@ class CoordinateCapture:
 
     def update(self, point: QgsPointXY):
         userCrsPoint = self.transform.transform(point)
-        userCrsPoint1 = self.transform.transform(point)
-        userCrsPoint2 = self.transform.transform(point)
-        if len(self.dockwidget.userCrsEdit.text())>0:
-            if len(self.dockwidget.userCrsEdit1.text())>0:
+        if len(self.dockwidget.userCrsEdit.displayText())>0:
+            userCrsPoint1 = self.transform.transform(point)
+            if len(self.dockwidget.userCrsEdit1.displayText())>0:
                userCrsPoint2 = self.transform.transform(point)
                self.dockwidget.userCrsEdit2.setText('{0:.{2}f},{1:.{2}f}'.format(userCrsPoint.x(),
                                                                          userCrsPoint.y(),
@@ -285,7 +284,6 @@ class CoordinateCapture:
                                                                         point.y(),
                                                                         self.canvasCrsDisplayPrecision))
             else:
-               userCrsPoint1 = self.transform.transform(point)
                self.dockwidget.userCrsEdit1.setText('{0:.{2}f},{1:.{2}f}'.format(userCrsPoint.x(),
                                                                          userCrsPoint.y(),
                                                                          self.userCrsDisplayPrecision))
@@ -293,7 +291,6 @@ class CoordinateCapture:
                                                                         point.y(),
                                                                         self.canvasCrsDisplayPrecision))             
         else:
-            userCrsPoint = self.transform.transform(point)
             self.dockwidget.userCrsEdit.setText('{0:.{2}f},{1:.{2}f}'.format(userCrsPoint.x(),
                                                                          userCrsPoint.y(),
                                                                          self.userCrsDisplayPrecision))
