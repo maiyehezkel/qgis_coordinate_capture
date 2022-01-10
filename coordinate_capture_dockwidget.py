@@ -74,7 +74,7 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.trackMouseButton.setChecked(False)
         
         self.crossMouseButton = QToolButton(self.dockWidgetContents)
-        self.crossMouseButton.setIcon(QIcon(":/plugins/coordinate_capture/cursor.svg"))
+        self.crossMouseButton.setIcon(QIcon(":/plugins/coordinate_capture/cursor.png"))
         self.crossMouseButton.setCheckable(True)
         self.crossMouseButton.setToolTip(self.tr("explantion"))
         self.crossMouseButton.setChecked(False)
