@@ -24,7 +24,7 @@
 from qgis.PyQt.QtCore import pyqtSignal, Qt
 from qgis.gui import QgsMapToolEmitPoint, QgsRubberBand
 from qgis.core import QgsWkbTypes, QgsPointXY, QgsApplication
-
+from .coordinate_capture_dockwidget import CoordinateCaptureDockWidget
 
 class CoordinateCaptureMapTool(QgsMapToolEmitPoint):
     mouseMoved = pyqtSignal(QgsPointXY)
@@ -37,8 +37,10 @@ class CoordinateCaptureMapTool(QgsMapToolEmitPoint):
         self.rubberBand = QgsRubberBand(self.mapCanvas, QgsWkbTypes.PolygonGeometry)
         self.rubberBand.setColor(Qt.red)
         self.rubberBand.setWidth(3)
-        self.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
-
+        if self.dockwidget.crossMouseButton.isChecked():
+            CoordinateCaptureDockWidget.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
+        else
+            CoordinateCaptureDockWidget.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CapturePoint))
 
           
           
