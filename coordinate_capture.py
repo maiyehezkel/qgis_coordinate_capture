@@ -283,4 +283,5 @@ class CoordinateCapture:
     def startCapturing(self):
         self.iface.mapCanvas().setMapTool(self.mapTool)
     def changeCross(self):
-     self.mapTool.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CapturePoint))
+       if self.dockwidget.crossMouseButton.isChecked():
+         self.mapTool.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CapturePoint))
