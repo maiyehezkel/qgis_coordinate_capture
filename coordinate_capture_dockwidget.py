@@ -125,8 +125,8 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.dockWidgetContents.layout().addWidget(self.canvasCrsEdit1, 3, 1)
         self.dockWidgetContents.layout().addWidget(self.userCrsEdit2, 4, 1)
         self.dockWidgetContents.layout().addWidget(self.canvasCrsEdit2, 5, 1)
-        self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 6, 0)
-        self.dockWidgetContents.layout().addWidget(self.crossMouseButton, 7, 0)
+        self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 7, 0)
+        self.dockWidgetContents.layout().addWidget(self.crossMouseButton, 6, 0)
         self.dockWidgetContents.layout().addWidget(self.captureButton, 7, 1)
         
 
