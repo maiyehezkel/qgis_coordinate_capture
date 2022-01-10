@@ -93,7 +93,8 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.dockWidgetContents.layout().addWidget(self.userCrsLabel, 1, 0)
         self.dockWidgetContents.layout().addWidget(self.canvasCrsEdit, 1, 1)
         self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 2, 0)
-        self.dockWidgetContents.layout().addWidget(self.captureButton, 2, 1)
+        self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 2, 1)
+        self.dockWidgetContents.layout().addWidget(self.captureButton, 2, 2)
 
     def copyUserCrsCoordinates(self):
         self.userCrsEdit.selectAll()
