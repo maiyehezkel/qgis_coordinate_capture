@@ -25,6 +25,7 @@
 from qgis.PyQt.QtCore import pyqtSignal
 from qgis.PyQt.QtWidgets import QWidget, QDockWidget, QGridLayout, QPushButton, QLineEdit, QToolButton, QLabel
 from qgis.PyQt.QtGui import QIcon, QPixmap
+from .coordinate_capture_map_tool import CoordinateCaptureMapTool
 
 
 class CoordinateCaptureDockWidget(QDockWidget):
@@ -92,9 +93,12 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.dockWidgetContents.layout().addWidget(self.userCrsEdit, 0, 1)
         self.dockWidgetContents.layout().addWidget(self.userCrsLabel, 1, 0)
         self.dockWidgetContents.layout().addWidget(self.canvasCrsEdit, 1, 1)
-        self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 2, 0)
-        self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 2, 1)
-        self.dockWidgetContents.layout().addWidget(self.captureButton, 2, 2)
+        self.dockWidgetContents.layout().addWidget(self.trackMouseButton, 3, 0)
+        self.dockWidgetContents.layout().addWidget(self.crossMouseButton, 2, 0)
+        self.dockWidgetContents.layout().addWidget(self.captureButton, 3, 1)
+        
+        if self.crossMouseButton.setChecked(False):
+         CoordinateCaptureMapTool.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
 
     def copyUserCrsCoordinates(self):
         self.userCrsEdit.selectAll()
