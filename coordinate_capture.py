@@ -272,8 +272,9 @@ class CoordinateCapture:
         self.update(point)
 
     def update(self, point: QgsPointXY):
-        if self.dockwidget.userCrsEdit.hasAcceptableInput():
-            if self.dockwidget.userCrsEdit1.hasAcceptableInput():
+        if self.dockwidget.userCrsEdit.hasSelectedText():
+            if self.dockwidget.userCrsEdit1.hasSelectedText():
+               userCrsPoint = self.transform.transform(point)
                self.dockwidget.userCrsEdit2.setText('{0:.{2}f},{1:.{2}f}'.format(userCrsPoint.x(),
                                                                          userCrsPoint.y(),
                                                                          self.userCrsDisplayPrecision))
@@ -281,14 +282,13 @@ class CoordinateCapture:
                                                                         point.y(),
                                                                         self.canvasCrsDisplayPrecision))
             else:
+               userCrsPoint = self.transform.transform(point)
                self.dockwidget.userCrsEdit1.setText('{0:.{2}f},{1:.{2}f}'.format(userCrsPoint.x(),
                                                                          userCrsPoint.y(),
                                                                          self.userCrsDisplayPrecision))
                self.dockwidget.canvasCrsEdit1.setText('{0:.{2}f},{1:.{2}f}'.format(point.x(),
                                                                         point.y(),
-                                                                        self.canvasCrsDisplayPrecision))
-               
-              
+                                                                        self.canvasCrsDisplayPrecision))             
         else:
             userCrsPoint = self.transform.transform(point)
             self.dockwidget.userCrsEdit.setText('{0:.{2}f},{1:.{2}f}'.format(userCrsPoint.x(),
