@@ -275,8 +275,8 @@ class CoordinateCapture:
         userCrsPoint = self.transform.transform(point)
         userCrsPoint1 = self.transform.transform(point)
         userCrsPoint2 = self.transform.transform(point)
-        if self.dockwidget.userCrsEdit.hasAcceptableInput() :
-            if self.dockwidget.userCrsEdit1.hasAcceptableInput() :
+        if self.dockwidget.userCrsEdit.text().isEmpty():
+            if self.dockwidget.userCrsEdit1.text().isEmpty() :
                userCrsPoint2 = self.transform.transform(point)
                self.dockwidget.userCrsEdit2.setText('{0:.{2}f},{1:.{2}f}'.format(userCrsPoint.x(),
                                                                          userCrsPoint.y(),
