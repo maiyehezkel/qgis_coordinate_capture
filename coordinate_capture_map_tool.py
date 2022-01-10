@@ -37,10 +37,7 @@ class CoordinateCaptureMapTool(QgsMapToolEmitPoint):
         self.rubberBand = QgsRubberBand(self.mapCanvas, QgsWkbTypes.PolygonGeometry)
         self.rubberBand.setColor(Qt.red)
         self.rubberBand.setWidth(3)
-        if CoordinateCaptureDockWidget.crossMouseButton.isChecked():
-            self.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
-        else:
-            self.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CapturePoint))
+        self.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
 
           
           
