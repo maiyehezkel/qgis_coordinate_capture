@@ -24,7 +24,7 @@
 from qgis.PyQt.QtCore import pyqtSignal, Qt
 from qgis.gui import QgsMapToolEmitPoint, QgsRubberBand
 from qgis.core import QgsWkbTypes, QgsPointXY, QgsApplication
-from .coordinate_capture_dockwidget import CoordinateCaptureDockWidget
+
 
 class CoordinateCaptureMapTool(QgsMapToolEmitPoint):
     mouseMoved = pyqtSignal(QgsPointXY)
