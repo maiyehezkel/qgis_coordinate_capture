@@ -86,8 +86,7 @@ class CoordinateCapture:
         self.mapTool = CoordinateCaptureMapTool(self.iface.mapCanvas())
         self.mapTool.mouseMoved.connect(self.mouseMoved)
         self.mapTool.mouseClicked.connect(self.mouseClicked)
-        if self.mapTool.crossMouseButton.setChecked(False):
-         self.mapTool.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
+       
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -236,6 +235,7 @@ class CoordinateCapture:
                 self.dockwidget = CoordinateCaptureDockWidget()
                 self.dockwidget.userCrsToolButton.clicked.connect(self.setCrs)
                 self.dockwidget.captureButton.clicked.connect(self.startCapturing)
+                self.dockwidget.crossMouseButton.clicked.connect(self.changeCross)
 
             # connect to provide cleanup on closing of dockwidget
             self.dockwidget.closingPlugin.connect(self.onClosePlugin)
@@ -282,3 +282,5 @@ class CoordinateCapture:
 
     def startCapturing(self):
         self.iface.mapCanvas().setMapTool(self.mapTool)
+    def changeCross(self):
+        self.mapTool.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
