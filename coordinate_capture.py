@@ -86,6 +86,8 @@ class CoordinateCapture:
         self.mapTool = CoordinateCaptureMapTool(self.iface.mapCanvas())
         self.mapTool.mouseMoved.connect(self.mouseMoved)
         self.mapTool.mouseClicked.connect(self.mouseClicked)
+        if self.mapTool.crossMouseButton.setChecked(False):
+         self.mapTool.setCursor(QgsApplication.getThemeCursor(QgsApplication.Cursor.CrossHair))
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
