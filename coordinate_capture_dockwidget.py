@@ -70,30 +70,22 @@ class CoordinateCaptureDockWidget(QDockWidget):
         self.userCrsEdit1 = QLineEdit(self.dockWidgetContents)
         self.userCrsEdit1.setReadOnly(True)
         self.userCrsEdit1.setToolTip(self.tr("Coordinate in your selected CRS (lat,lon or east,north)"))
-        self.copyUserCrsCoordinatesAction = self.userCrsEdit1.addAction(QIcon(":/plugins/coordinate_capture/mActionEditCopy.svg"),
-                                                                       QLineEdit.TrailingPosition)
-        self.copyUserCrsCoordinatesAction.triggered.connect(self.copyUserCrsCoordinates)
+
 
         self.canvasCrsEdit1 = QLineEdit(self.dockWidgetContents)
         self.canvasCrsEdit1.setReadOnly(True)
         self.canvasCrsEdit1.setToolTip(self.tr("Coordinate in map canvas coordinate reference system (lat,lon or east,north)"))
-        self.copyCanvasCrsCoordinatesAction = self.canvasCrsEdit1.addAction(QIcon(":/plugins/coordinate_capture/mActionEditCopy.svg"),
-                                                                           QLineEdit.TrailingPosition)
-        self.copyCanvasCrsCoordinatesAction.triggered.connect(self.copyCanvasCrsCoordinates)
+
         
         self.userCrsEdit2 = QLineEdit(self.dockWidgetContents)
         self.userCrsEdit2.setReadOnly(True)
         self.userCrsEdit2.setToolTip(self.tr("Coordinate in your selected CRS (lat,lon or east,north)"))
-        self.copyUserCrsCoordinatesAction = self.userCrsEdit2.addAction(QIcon(":/plugins/coordinate_capture/mActionEditCopy.svg"),
-                                                                       QLineEdit.TrailingPosition)
-        self.copyUserCrsCoordinatesAction.triggered.connect(self.copyUserCrsCoordinates)
+
 
         self.canvasCrsEdit2 = QLineEdit(self.dockWidgetContents)
         self.canvasCrsEdit2.setReadOnly(True)
         self.canvasCrsEdit2.setToolTip(self.tr("Coordinate in map canvas coordinate reference system (lat,lon or east,north)"))
-        self.copyCanvasCrsCoordinatesAction = self.canvasCrsEdit2.addAction(QIcon(":/plugins/coordinate_capture/mActionEditCopy.svg"),
-                                                                           QLineEdit.TrailingPosition)
-        self.copyCanvasCrsCoordinatesAction.triggered.connect(self.copyCanvasCrsCoordinates)
+
         
         self.trackMouseButton = QToolButton(self.dockWidgetContents)
         self.trackMouseButton.setIcon(QIcon(":/plugins/coordinate_capture/tracking.svg"))
